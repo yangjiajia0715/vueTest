@@ -13,6 +13,21 @@
 
 <script>
 export default {
+  created () {
+    // setTimeout(() => {
+    //   alert('对不起, 要你久候')
+    // }, 3000)
+    var data1 = 0
+    function count1 () {
+      console.log('count1:', data1++)
+      console.log('count1:', typeof data1)
+      console.log('count1:', Object.prototype.toString.call(data1))
+      if (data1 === 3) {
+        clearInterval(timeId)
+      }
+    }
+    var timeId = setInterval(count1, 2000)
+  },
   methods: {
     addF () {
       var txt = 'text'

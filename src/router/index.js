@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Group from '@/components/Group'
 import Login from '../components/Login'
+import Preload from '../components/Preload'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: Login
+    },
+    {
+      path: '/preload',
+      name: 'preload',
+      component: Preload
     }
   ]
 })

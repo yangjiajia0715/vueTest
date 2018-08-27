@@ -5,6 +5,7 @@
     <button @click="jump" >Group</button>
     <button @click="login()" >登录</button>
     <button @click="counter += 1" >点击加1</button>
+    <button @click="preload()" >预加载</button>
     <p>按钮点击了{{counter}}次</p>
     <button v-on:click="counter += 2" >点击加2</button>
     <button v-on:click.once="say('hi')">Say hi once</button>
@@ -53,6 +54,9 @@ export default {
     },
     login: function (message) {
       this.$router.push({name: 'login'})
+    },
+    preload: function () {
+      this.$router.push({name: 'preload'})
     }
   }
 }
