@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import Group from '@/components/Group'
 import Login from '../components/Login'
 import Preload from '../components/Preload'
+import Animation from '../components/Animation'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/preload',
       name: 'preload',
       component: Preload
+    },
+    {
+      path: '/animation',
+      name: 'animation',
+      component: Animation
     }
   ]
 })

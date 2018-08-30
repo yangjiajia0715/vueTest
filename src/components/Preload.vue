@@ -12,9 +12,9 @@
       <video rel="search"></video>
     </div>
     <div>
-      <div v-for="(item, index) of images">
-        <div>{{index}}-{{item}}</div>
-      </div>
+      <!--<div v-for="(item, index) in images">-->
+        <!--<div>{{index}}-{{item}}</div>-->
+      <!--</div>-->
     </div>
   </div>
 </template>
