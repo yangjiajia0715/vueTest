@@ -5,6 +5,7 @@ import Group from '@/components/Group'
 import Login from '../components/Login'
 import Preload from '../components/Preload'
 import Animation from '../components/Animation'
+import JsTest from '../components/JsTest'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/animation',
       name: 'animation',
       component: Animation
+    },
+    {
+      path: '/jsTest',
+      name: 'jstest',
+      component: JsTest
     }
   ]
 })
