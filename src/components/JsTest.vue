@@ -1,4 +1,19 @@
 <template>
+  <div>
+    <div>
+      Js相关
+    </div>
+    <div style="background-color: cadetblue; height: 100%">
+      <img src="/static/loading.jpg" style="vertical-align: middle; width: 100px; height: 100px; clip: rect(0px, 50px, 100px, 0px)"/>
+    </div>
+    <div>
+      <h2 style="position: relative;">这是位于正常位置的标题relative</h2>
+      <h2 style="position: fixed;top: 10px; right: 0">这是位于正常位置的标题fixed</h2>
+      <h2 style="position: relative; left: -100px">这是位于正常位置的标题relative -100</h2>
+      <h2 style="position: relative; width: 300px; height: 1000px; overflow: scroll">这个属性定义溢出元素内容区的内容会如何处理。如果值为 scroll，不论是否需要，用户代理都会提供一种滚动机制。因此，有可能即使元素框中可以放下所有内容也会出现滚动条。默认值是 visible。</h2>
+      <img src="/static/loading.jpg" style="position: absolute; top: 0; vertical-align: middle; width: 100px; height: 100px"/>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -12,6 +27,8 @@ export default {
     this.arrayFilter()
     this.arraySome()
     this.arrayReduce()
+
+    this.arrayOther()
   },
   methods: {
     arrayInclude: function () {
@@ -66,6 +83,20 @@ export default {
     arraySome: function () {
     },
     arrayReduce: function () {
+    },
+    arrayOther () {
+      const arrays = [
+        'ironman',
+        'black_widow',
+        'hulk',
+        'captain_america'
+      ]
+      const arrays2 = [
+        'zhangsan',
+        'lisi'
+      ]
+      console.log('arrayOther', arrays)
+      console.log('arrayOther', arrays2)
     }
   }
 }
