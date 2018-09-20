@@ -39,6 +39,12 @@ export default {
       msgM2: '文本2'
     }
   },
+  watch: {
+    '$route' (to, from) {
+      console.log('watch', to, from)
+      // 对路由变化作出响应...
+    }
+  },
   methods: {
     addCard () {
       if (!this.food.type) {
@@ -64,7 +70,14 @@ export default {
       this.$router.push({name: 'animation'})
     },
     jsTest: function () {
-      this.$router.push({name: 'jstest'})
+      // this.$router.push({name: 'jstest'})
+      // 动态路由匹配
+      const userId = 789
+      // this.$router.push({path: '/jsTest/router', params: {userId}})
+      this.$router.push({name: 'jstest', params: {userId, type: 'myType'}})
+      // this.$router.replace({name: 'jstest', params: {userId, type: 'myType'}})
+      // this.$router.push({path: '/jsTest/router/show'})
+      // this.$router.push({path: '/jsTest/router/show/'})
     }
   }
 }

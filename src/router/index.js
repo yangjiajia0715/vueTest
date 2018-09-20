@@ -6,9 +6,25 @@ import Login from '../components/Login'
 import Preload from '../components/Preload'
 import Animation from '../components/Animation'
 import JsTest from '../components/JsTest'
-
+import RouterChild from '../components/RouterChild'
+// const Foo = {template: '<div>foo</div>'}
 Vue.use(Router)
-
+// const routes = [
+//   {path: '/foo', component: Foo},
+//   {}
+// ]
+//
+// const router = new VueRouter({
+//   routes: routes
+// })
+//
+// const app = new Vue({
+//   router
+// }).$mount('#app')
+// style="width: 200px; height: 200px"
+const TemplateDefault = { template: '<div>我是默认模板TemplateDefault</div>' }
+const TemplateSlideBar = { template: '<div>TemplateSlideBar</div>' }
+const TemplateMain = { template: '<div>TemplateMain</div>' }
 export default new Router({
   routes: [
     {
@@ -37,9 +53,24 @@ export default new Router({
       component: Animation
     },
     {
-      path: '/jsTest',
+      path: '/jsTest/:type',
       name: 'jstest',
-      component: JsTest
+      component: JsTest,
+      children: [
+        {
+          path: 'show',
+          name: 'show',
+          component: RouterChild
+        },
+        {
+          path: '',
+          components: {
+            default: TemplateDefault,
+            slideBar: TemplateSlideBar,
+            main: TemplateMain
+          }
+        }
+      ]
     }
   ]
 })

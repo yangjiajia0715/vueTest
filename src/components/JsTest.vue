@@ -10,9 +10,19 @@
       <h2 style="position: relative;">这是位于正常位置的标题relative</h2>
       <h2 style="position: fixed;top: 10px; right: 0">这是位于正常位置的标题fixed</h2>
       <h2 style="position: relative; left: -100px">这是位于正常位置的标题relative -100</h2>
-      <h2 style="position: relative; width: 300px; height: 1000px; overflow: scroll">这个属性定义溢出元素内容区的内容会如何处理。如果值为 scroll，不论是否需要，用户代理都会提供一种滚动机制。因此，有可能即使元素框中可以放下所有内容也会出现滚动条。默认值是 visible。</h2>
+      <!--<h2 style="position: relative; width: 300px; height: 1000px; overflow: scroll">
+        这个属性定义溢出元素内容区的内容会如何处理。如果值为 scroll，不论是否需要，用户代理都会提供一种滚动机制。因此，有可能即使元素框中可以放下所有内容也会出现滚动条。默认值是 visible。
+      </h2>-->
       <img src="/static/loading.jpg" style="position: absolute; top: 0; vertical-align: middle; width: 100px; height: 100px"/>
+      <!--<router-link to="/">routerLink</router-link>-->
     </div>
+    <button type="button" @click="myClick">点击</button>
+    <!--<div style="width: 100px; height: 100px; background-color: cadetblue">-->
+    <router-view class="routerDefault" style=""></router-view>
+    <del>删除线</del>
+    <router-view class="slideBar" name="slideBar"></router-view>
+    <router-view class="main" name="main"></router-view>
+    <!--</div>-->
   </div>
 </template>
 
@@ -22,13 +32,31 @@ export default {
     return {
     }
   },
+  beforeRouteUpdate (to, from, next) {
+    console.log('beforeRouteUpdate', to, from, next)
+    // react to route changes...
+    // don't forget to call next()
+  },
   created () {
     // this.arrayInclude()
-    this.arrayFilter()
-    this.arraySome()
-    this.arrayReduce()
-
-    this.arrayOther()
+    // this.arrayFilter()
+    // this.arraySome()
+    // this.arrayReduce()
+    //
+    // this.arrayOther()
+    // console.log('created $router', this.$router)
+    console.log('created $route', this.$route)
+    console.log('created $route path', this.$route.path)
+    console.log('created $route params', this.$route.params)
+  },
+  mounted () {
+    // console.log('mounted $route', this.$route)
+  },
+  watch: {
+    '$route' (to, from) {
+      console.log('jsTest watch', to, from)
+      // 对路由变化作出响应...
+    }
   },
   methods: {
     arrayInclude: function () {
@@ -97,11 +125,24 @@ export default {
       ]
       console.log('arrayOther', arrays)
       console.log('arrayOther', arrays2)
+    },
+    myClick () {
+      console.log('myClick')
+      window.history.go(-1)
+      // this.$router.go(-1)
     }
   }
 }
 </script>
 
 <style scoped>
-
+.routerDefault {
+  background-color: chocolate;
+}
+.slideBar {
+  background-color: cadetblue;
+}
+.main {
+  background-color: lightcoral;
+}
 </style>
