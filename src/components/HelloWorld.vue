@@ -67,7 +67,9 @@ export default {
       this.$router.push({name: 'preload'})
     },
     animation: function () {
-      this.$router.push({name: 'animation'})
+      // this.$router.push({name: 'animation'})
+      // this.$router.push({path: '/redirectAnimation'})
+      this.$router.push({path: '/animationAlias'})
     },
     jsTest: function () {
       // this.$router.push({name: 'jstest'})

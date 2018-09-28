@@ -98,6 +98,7 @@ export default {
     }
   },
   created () {
+    console.log('animation $route', this.$route)
   },
   computed: {
     buttonMessage: function () {

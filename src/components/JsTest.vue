@@ -23,6 +23,11 @@
     <router-view class="slideBar" name="slideBar"></router-view>
     <router-view class="main" name="main"></router-view>
     <!--</div>-->
+    <div class="div">
+      after<span class="after">我是里面的内容</span>
+    </div>
+    <div class="div">before<span class="before">我是里面的内容</span></div>
+    <!--<div class="divb">block<span class="block">我是里面的内容</span></div>-->
   </div>
 </template>
 
@@ -45,6 +50,7 @@ export default {
     //
     // this.arrayOther()
     // console.log('created $router', this.$router)
+    console.log('created $router', this.$router)
     console.log('created $route', this.$route)
     console.log('created $route path', this.$route.path)
     console.log('created $route params', this.$route.params)
@@ -130,6 +136,7 @@ export default {
       console.log('myClick')
       window.history.go(-1)
       // this.$router.go(-1)
+      //
     }
   }
 }
@@ -145,4 +152,13 @@ export default {
 .main {
   background-color: lightcoral;
 }
+
+.div{width:350px; border:1px solid #000; line-height:50px; margin:10px;}
+
+.divb{width:500px; border:1px solid #FC0;}
+.after,.before,.block{border:1px solid #330;}
+.after:after{content:'我在后面吧'; color:#F00;}
+.before:before{content:'我在前面吧'; color:#F00; font-size: 22px}
+.block:after{content:'我是块元素，我占一行'; color:#F00; display:block;}
+.block{display:block;}
 </style>

@@ -50,6 +50,11 @@ export default new Router({
     {
       path: '/animation',
       name: 'animation',
+      redirect: '/redirectAnimation',
+      alias: '/animationAlias',
+      // redirect: to => {
+      //   console.log('redirect: to', to)
+      // },
       component: Animation
     },
     {
