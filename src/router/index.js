@@ -7,6 +7,7 @@ import Preload from '../components/Preload'
 import Animation from '../components/Animation'
 import JsTest from '../components/JsTest'
 import RouterChild from '../components/RouterChild'
+import Css from '../components/Css'
 // const Foo = {template: '<div>foo</div>'}
 Vue.use(Router)
 // const routes = [
@@ -76,6 +77,11 @@ export default new Router({
           }
         }
       ]
+    },
+    {
+      path: '/css',
+      name: 'css',
+      component: Css
     }
   ]
 })

@@ -8,6 +8,7 @@
     <button @click="preload()" >预加载</button>
     <button @click="animation()" >动画</button>
     <button @click="jsTest()" >js相关</button>
+    <button @click="css()" >CSS相关</button>
     <p>按钮点击了{{counter}}次</p>
     <button v-on:click="counter += 2" >点击加2</button>
     <button v-on:click.once="say('hi')">Say hi once</button>
@@ -80,6 +81,9 @@ export default {
       // this.$router.replace({name: 'jstest', params: {userId, type: 'myType'}})
       // this.$router.push({path: '/jsTest/router/show'})
       // this.$router.push({path: '/jsTest/router/show/'})
+    },
+    css () {
+      this.$router.push({path: '/css'})
     }
   }
 }
